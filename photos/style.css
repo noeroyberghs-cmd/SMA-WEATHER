@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+nav{
+    font-weight: 545;
+    text-align: left;
+    font-family:'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 3dvb;
+    padding-right: 80px;
+    background-color: lightskyblue;
+    border-bottom: 5px solid lightseagreen;
+    word-spacing: 10px;
+}
+
+nav a{
+
+    text-decoration: none;
+  margin-left: 30px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+
+}
+
+.active{
+    color : lightseagreen;
+}
+
+@keyframes fadeText {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
