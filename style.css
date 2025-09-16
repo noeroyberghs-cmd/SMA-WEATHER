@@ -6,12 +6,12 @@ body{
 }
 
 nav{
-    font-weight: 545;
+    font-weight: 500;
     text-align: left;
     font-family:'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 25px;
     text-transform: uppercase;
-    padding: 3dvb;
+    padding: 20px;
     padding-right: 80px;
     background-color: lightskyblue;
     border-bottom: 5px solid lightseagreen;
