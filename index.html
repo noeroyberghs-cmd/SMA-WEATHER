@@ -7,25 +7,49 @@
     <title>SMA WEATHER</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/photos/android-chrome-512x512.png" type="image/x-icon">
   </head>
   <body>
-    <main>
-        <nav>
-           <a href="index.html">
-             <img src="/photos/regen.png" alt="Logo" style="width: auto; max-height: 100px; display: flex; align-items: center; margin-left: 500px;">
-           </a>
-            <a href="index.html" class="active">Home</a>
-                
-            
-            <a href="credits.html">Credits</a>
-
-
-
-
-        </nav>
-        <h1>Welcome to My Website</h1>
-    </main>
     
+    <main>
+      <nav>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="credits.html">Credits</a>
+        </div>
+        <a href="index.html">
+          <img src="/photos/regen.png" alt="Logo" class="logo">
+        </a>
+      </nav>
+
+      <div class="slider">
+<div class="slide active">
+<img src="/photos/storm_1.jpg" alt="Mountain">
+<div>Welcome to SMA WEATHER</div>
+</div>
+<div class="slide">
+<img src="/photos/groen-veld-met-gele-paardebloemen_1398-3708.jpg" alt="Sea">
+<div>Weer site voor Sancta Maria Aarschot</div>
+</div>
+<div class="slide">
+<img src="https://picsum.photos/id/1039/1600/900" alt="Forest">
+<div>Project Cluster IT </div>
+</div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let index = 0;
+
+
+setInterval(() => {
+slides[index].classList.remove('active');
+index = (index + 1) % slides.length;
+slides[index].classList.add('active');
+}, 4000);
+</script>
+
+      
+    </main>
   </body>
 </html>
