@@ -19,12 +19,15 @@ nav {
   font-size: 25px;
   font-weight: 500;
   text-transform: uppercase;
+  transition: all 0.3s ease;
+
 }
 
 /* Links container */
 .nav-links {
   display: flex;
   gap: 30px;
+  transition: all 0.3s ease;
 }
 
 /* Individual nav links */
@@ -33,6 +36,7 @@ nav a {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   color: black;
+  
 }
 
 nav a:hover {
