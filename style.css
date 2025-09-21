@@ -90,3 +90,48 @@ z-index: -1;
 .slide.active {
 opacity: 1;
 }
+
+.textbox-section
+{
+  border-top: 5px solid lightseagreen;
+  margin: 0;
+  min-height: 100vh;
+  background: lightskyblue;
+  color: white;
+  transition: all 0.3s ease;
+}
+.head
+{
+
+  padding: 10vh;
+
+  margin: 0;
+
+  font-size: 50px;
+
+}
+.WartmeNU
+{
+  font-size: 30px;
+}
+
+.text-details
+{
+  /*border-bottom: 20px solid lightseagreen;*/
+  border-top: 5px solid lightseagreen;
+   display: flex; 
+   border-width: 20px;
+   margin: 20px auto;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 500px;
+}
+
+.textbox-section .section-content .text-details
+{
+  border-top: 5px solid lightseagreen;
+  color: white;
+ transition: all 0.3s ease;
+  
+}
