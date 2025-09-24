@@ -1,3 +1,6 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
 body {
   margin: 0;
   padding: 0;
@@ -91,14 +94,6 @@ z-index: -1;
 opacity: 1;
 }
 
-.credits-section
-{
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background: lightskyblue;
-}
-
 .textbox-section
 {
   border-top: 5px solid lightseagreen;
@@ -164,12 +159,15 @@ opacity: 1;
     .line {
   display: inline-block;       /* makes it wrap just the text */
   padding: 2px 8px;            /* vertical + horizontal padding */
-  background-color: #7c7c6b;  /* same color as before */
+  /* background-color: #7c7c6b;*/  /* same color as before */
   border-radius: 6px;          /* same rounding as your div */
   font-size: 12px;             /* optional, matches your 12px height */
   line-height: 1;              /* keeps the height tight around text */
   color: white;                /* optional, makes text visible */
   margin-bottom: 20px;
+  font-weight: 500;
+  
+
 }
 
     .line.short {
@@ -189,4 +187,5 @@ opacity: 1;
         display:flex;
         flex-direction:column;
         gap: 20px;
+        min-height: 100vh;
     }
