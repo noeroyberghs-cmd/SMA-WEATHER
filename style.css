@@ -144,10 +144,49 @@ opacity: 1;
   
 }
 
-.cards
-{
-  padding: 10px 10px;
-  background: black;
-  border-radius: 8px;
-  margin: 0 8px;
+.card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: #7c7c6b;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      background-size: contain;
+    }
+
+    .line {
+  display: inline-block;       /* makes it wrap just the text */
+  padding: 2px 8px;            /* vertical + horizontal padding */
+  background-color: #7c7c6b;  /* same color as before */
+  border-radius: 6px;          /* same rounding as your div */
+  font-size: 12px;             /* optional, matches your 12px height */
+  line-height: 1;              /* keeps the height tight around text */
+  color: white;                /* optional, makes text visible */
+  margin-bottom: 20px;
 }
+
+    .line.short {
+      width: 60%;
+      font-size: 30px;
+    }
+
+    .line.long {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .cardsbox
+    {
+      margin-top: 50px;
+      align-items: center;
+        display:flex;
+        flex-direction:column;
+        gap: 20px;
+    }
