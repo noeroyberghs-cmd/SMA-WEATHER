@@ -56,13 +56,58 @@ slides[index].classList.add('active');
 }, 4000);
 </script>
 
+<script type="module">
+    // Import Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    // ✅ Replace with your config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "sma-wheater",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "XXXX",
+      appId: "XXXX"
+    };
+
+    // Init
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadData() {
+      try {
+        const ref = doc(db, "products", "product1");
+        const snap = await getDoc(ref);
+
+        if (snap.exists()) {
+          const data = snap.data();
+          document.getElementById("output").innerHTML =
+            `Warmte ${data.}`;
+        } else {
+          document.getElementById("output").innerText = "No data found!";
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById("output").innerText = "Error loading data";
+      }
+    }
+
+    // Load once immediately
+    loadData();
+
+    // ✅ Refresh every 60 seconds (60000 ms)
+    setInterval(loadData, 60000);
+  </script>
+
+
 <section class="textbox-section">
   <div class="section-content">
     <h1 class="head">Weer op school</h1>
     <div class="text-details">
       <!--Nils voeg hier code toe nodered of wat dan ook-->
       <h2 class="zon">⛅| Zonnig en bewolkt</h2>
-      <h2 class="WartmeNU">🌡️|  19° momenteel</h2>
+      <h2 class="WartmeNU" id="output">🌡️|  19° momenteel</h2>
       <h2 class="vochtigheid">☔| 32% vochtig nu</h2>
     </div>
   </div>
