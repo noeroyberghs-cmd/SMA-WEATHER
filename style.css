@@ -198,6 +198,23 @@ opacity: 1;
         min-height: 100vh;
         position: relative;
     }
+    .detail-box{
+      margin-top: 20px;
+      align-items: center;
+        display:grid;
+        gap: 20px;
+        min-height: 90%;
+        margin-left: 20%;
+        margin-bottom: 20px;
+    }
+    .detail{
+      background-color: lightskyblue;
+      padding: 30px;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border: 3px solid lightseagreen;
+    }
 
 
 #loading-screen {
