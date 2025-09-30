@@ -80,29 +80,42 @@ onSnapshot(docRef, (snap) => {
   if (snap.exists()) {
     const data = snap.data();
     console.log("Data:", data);
-    
-    
+  document.getElementById("laatstemeettijd").innerText = "geupdate om " + new Date().toLocaleTimeString();
+  
+document.getElementById("output3").innerText = `${data["humidity-later"]}%`;
+
     if (data.Warmth >= 18)
   {
-    document.getElementById("output").innerText = `🌡️ | Warmte: ${data.Warmth}°`;
+    document.getElementById("output").innerText = `🌡️ | ${data.Warmth}°`;
   }
   else
 
   {
-    document.getElementById("output").innerText = `❄️ | Warmte: ${data.Warmth}°`;
+    document.getElementById("output").innerText = `❄️ | ${data.Warmth}°`;
   }
   if (data.humitidy >= 60)
   {
-    document.getElementById("output2").innerText = `☔ | ${data.humitidy}% vochtig nu`;
+    document.getElementById("output2").innerText = `☔ | ${data.humitidy}%`;
   }
   else
   {
-    document.getElementById("output2").innerText = `🌂 | ${data.humitidy}% vochtig nu`;
+    document.getElementById("output2").innerText = `🌂 | ${data.humitidy}%`;
+  }
+  if (data.Warmth >= 18)
+  {
+    document.getElementById("output4").innerText = `🌡️ | ${data["Temp-Later"]}°`;
+  }
+  else
+
+  {
+    document.getElementById("output4").innerText = `❄️ |${data["Temp-Later"]}°`;
   }
   } else {
     console.log("Document does not exist!");
     document.getElementById("output").innerText = "No data found!";
   }
+  
+    
 }, (error) => {
   console.error("Firestore real-time error:", error);
   document.getElementById("output").innerText = "Error loading data";
@@ -111,13 +124,23 @@ onSnapshot(docRef, (snap) => {
 
       <section class="textbox-section">
         <h1 class="head">Weer op school</h1>
+        <H1 class="head" id="laatstemeettijd" style="font-size: 50px;">Loading tijd....</H1>
         <div class="section-content">
           <div class="detail-box">
             <div class="detail">
+              <h1>Vochtigheid :</h1>
               <h1 id="output2">Loading Vochtigheid...</h1>
+              <!--<h1></h1>-->
+              <h1>Vorige Vochtigheid</h1>
+              <h1 id="output3" style="font-size: 20px;">Loading Laatste- <br>Vochtigheid</h1>
+              
             </div>
             <div class="detail">
+              <h1>Warmte :</h1>
               <h1 id="output">Loading Wartme...</h1>
+              <!--<H1></H1>-->
+              <H1>vorige graden</H1>
+              <h1 id="output4" style="font-size: 20px;">Loading Laatste- <br>Wartme</h1>
             </div>
           </div>
 
