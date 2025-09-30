@@ -248,3 +248,7 @@ opacity: 1;
       font-size: 2rem;
     }
 
+.section-content {
+  display: grid;
+}
+
