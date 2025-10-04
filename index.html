@@ -82,7 +82,6 @@ onSnapshot(docRef, (snap) => {
     console.log("Data:", data);
   document.getElementById("laatstemeettijd").innerText = "geupdate om " + new Date().toLocaleTimeString();
   
-document.getElementById("output3").innerText = `${data["humidity-later"]}%`;
 
     if (data.Warmth >= 18)
   {
@@ -101,14 +100,22 @@ document.getElementById("output3").innerText = `${data["humidity-later"]}%`;
   {
     document.getElementById("output2").innerText = `🌂 | ${data.humitidy}%`;
   }
-  if (data.Warmth >= 18)
+  if (data["Temp-Later"] >= 18)
   {
     document.getElementById("output4").innerText = `🌡️ | ${data["Temp-Later"]}°`;
   }
   else
 
   {
-    document.getElementById("output4").innerText = `❄️ |${data["Temp-Later"]}°`;
+    document.getElementById("output4").innerText = `❄️ | ${data["Temp-Later"]}°`;
+  }
+  if (data["humidity-later"] >= 60)
+  {
+    document.getElementById("output3").innerText = `☔ | ${data["humidity-later"]}%`;
+  }
+  else
+  {
+    document.getElementById("output3").innerText = `🌂 | ${data["humidity-later"]}%`;
   }
   } else {
     console.log("Document does not exist!");
@@ -131,7 +138,7 @@ document.getElementById("output3").innerText = `${data["humidity-later"]}%`;
               <h1>Vochtigheid :</h1>
               <h1 id="output2">Loading Vochtigheid...</h1>
               <!--<h1></h1>-->
-              <h1>Vorige Vochtigheid</h1>
+              <h1>Vorige %</h1>
               <h1 id="output3" style="font-size: 20px;">Loading Laatste- <br>Vochtigheid</h1>
               
             </div>
@@ -139,7 +146,7 @@ document.getElementById("output3").innerText = `${data["humidity-later"]}%`;
               <h1>Warmte :</h1>
               <h1 id="output">Loading Wartme...</h1>
               <!--<H1></H1>-->
-              <H1>vorige graden</H1>
+              <H1>vorige °</H1>
               <h1 id="output4" style="font-size: 20px;">Loading Laatste- <br>Wartme</h1>
             </div>
           </div>
