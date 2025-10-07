@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SMA WEATHER</title>
     <link rel="stylesheet" href="style.css">
@@ -135,19 +136,19 @@ onSnapshot(docRef, (snap) => {
         <div class="section-content">
           <div class="detail-box">
             <div class="detail">
-              <h1>Vochtigheid :</h1>
+              <h1>Vochtigheid</h1>
               <h1 id="output2">Loading Vochtigheid...</h1>
               <!--<h1></h1>-->
-              <h1>Vorige %</h1>
-              <h1 id="output3" style="font-size: 20px;">Loading Laatste- <br>Vochtigheid</h1>
+              <h1 class="vorige">Vorige %</h1>
+              <h1 id="output3" style="font-size: 30px;">Loading Laatste- <br>Vochtigheid</h1>
               
             </div>
             <div class="detail">
-              <h1>Warmte :</h1>
+              <h1>Warmte</h1>
               <h1 id="output">Loading Wartme...</h1>
               <!--<H1></H1>-->
-              <H1>vorige °</H1>
-              <h1 id="output4" style="font-size: 20px;">Loading Laatste- <br>Wartme</h1>
+              <H1 class ="vorige">vorige °</H1>
+              <h1 id="output4" style="font-size: 30px;">Loading Laatste- <br>Wartme</h1>
             </div>
           </div>
 
