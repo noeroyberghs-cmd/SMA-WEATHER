@@ -220,6 +220,14 @@ opacity: 1;
   .detail-box {
     grid-template-columns: 1fr;
   }
+  .detail-long{
+    background-color: lightskyblue;
+      padding: 30px;
+      border-radius: 12px;
+      height: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border: 3px solid lightseagreen;
+  }
 }
 
     .vorige{
