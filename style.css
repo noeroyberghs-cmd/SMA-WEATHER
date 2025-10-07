@@ -15,6 +15,8 @@ body {
 
 /* Navigation bar */
 nav {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between; /* links left, logo right */
   align-items: center;
@@ -26,6 +28,7 @@ nav {
   font-weight: 500;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  z-index: 1;
 
 }
 

@@ -130,6 +130,67 @@ onSnapshot(docRef, (snap) => {
 });
       </script>
 
+      <script>
+const apiKey = "df7c99905d684a558a0115012250710";
+const city = "Aarschot";
+
+async function getWeather() {
+  const weatherUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no&lang=nl`;
+
+  try {
+    const response = await fetch(weatherUrl);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+
+    document.getElementById("city-name").textContent = `${data.location.name}, ${data.location.country}`;
+    document.getElementById("weather-condition").textContent = data.current.condition.text;
+    document.getElementById("wind_kph").textContent = data.current.wind_kph;
+
+  } catch (error) {
+    console.error("Error fetching weather:", error);
+    document.getElementById("city-name").textContent = "Error";
+    document.getElementById("weather-condition").textContent = error.message;
+  }
+}
+
+async function getForecast() {
+  const forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=1&lang=nl`;
+
+  try {
+    const response = await fetch(forecastUrl);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+
+    const now = new Date();
+    const currentHour = now.getHours();
+    const forecastHours = data.forecast.forecastday[0].hour;
+    let forecastText = "";
+
+    for (let i = 0; i < 3; i++) {
+      let hourIndex = currentHour + i;
+      if (hourIndex >= 24) hourIndex -= 24;
+      const hourData = forecastHours[hourIndex];
+      const time = hourData.time.split(" ")[1];
+      const chanceOfRain = hourData.chance_of_rain || 0;
+      forecastText += `${time}: ${chanceOfRain}% kans op regen<br>`;
+    }
+
+    document.getElementById("forecast").innerHTML = forecastText;
+
+  } catch (error) {
+    console.error("Error fetching forecast:", error);
+    document.getElementById("forecast").textContent = "Kon geen voorspelling laden";
+  }
+}
+
+getWeather();
+getForecast();
+
+setInterval(getWeather, 60000);
+setInterval(getForecast, 60000);
+</script>
+
+
       <section class="textbox-section">
         <h1 class="head">Weer op school</h1>
         <H1 class="head" id="laatstemeettijd" style="font-size: 50px;">Loading tijd....</H1>
@@ -151,6 +212,8 @@ onSnapshot(docRef, (snap) => {
               <h1 id="output4" style="font-size: 30px;">Loading Laatste- <br>Wartme</h1>
             </div>
           </div>
+
+          <h1 id="forecast"></h1>
 
           
           
