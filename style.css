@@ -15,6 +15,7 @@ body {
 
 /* Navigation bar */
 nav {
+  color: white;
   position: sticky;
   top: 0;
   display: flex;
@@ -41,10 +42,11 @@ nav {
 
 /* Individual nav links */
 nav a {
+  color: white;
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  color: black;
+  /*color: black;*/
   
 }
 
@@ -316,6 +318,31 @@ opacity: 1;
 
 .section-content {
   display: grid;
+}
+
+.About-section {
+  color: white;
+  margin: 0;
+  padding: 40px;
+  background-color: lightskyblue;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.About-Details{
+  
+  background-color: lightskyblue;
+  /*background-color: black;*/
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 3px solid lightseagreen;
+  
 }
 
 
